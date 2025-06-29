@@ -1,0 +1,385 @@
+/* ==== ESTILOS PARA TESTS (PreTest y PostTest) ==== */
+.test-container {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 750px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.question-block {
+  margin-bottom: 25px;
+  padding: 20px;
+  border-left: 5px solid #007bff;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.question-block p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.option-label {
+  display: block;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
+}
+
+/* ==== ESTILOS PARA RESULTADOS ==== */
+.resultados-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resultados-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.mensaje-carga,
+.mensaje-error {
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+  margin-top: 20px;
+}
+
+.grafico-container {
+  margin-bottom: 30px;
+}
+
+.analisis-container {
+  background-color: #f1f5f9;
+  border-left: 5px solid #0b5ed7;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.analisis-container h3 {
+  margin-bottom: 10px;
+  color: #0b5ed7;
+}
+
+.analisis-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.analisis-container li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+/* ==== ESTILO FORMULARIO DE REGISTRO ==== */
+.form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+/* ==== ESTILOS PARA CHATBOT ==== */
+.chatbot-container {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 750px;
+  margin: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chatbox {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  min-height: 200px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background-color: #e5d4ff;
+  color: #4b0082;
+  padding: 10px 15px;
+  border-radius: 16px;
+  max-width: 80%;
+  font-size: 15px;
+}
+
+.user-message {
+  align-self: flex-end;
+  background-color: #cce5ff;
+  color: #003366;
+  padding: 10px 15px;
+  border-radius: 16px;
+  max-width: 80%;
+  font-size: 15px;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.chat-input button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+  background-color: #0056b3;
+}
+
+/* ==== NAVBAR PROFESIONAL ==== */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #0b5ed7;
+  padding: 15px 20px;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.nav-link {
+  color: white;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 6px;
+}
+
+.nav-link:hover {
+  background-color: #084bb5;
+  color: #e0e0e0;
+}
+
+/* ==== ESTILOS PARA CONTENIDO GENERAL ==== */
+.app-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  min-height: 100vh;
+}
+
+.page-content {
+  padding: 30px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* ==== ESTILOS PARA TESTS (PreTest y PostTest) ==== */
+.test-container {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 750px;
+  margin: auto;
+}
+
+.test-title {
+  text-align: center;
+  color: #0b5ed7;
+  margin-bottom: 20px;
+}
+
+.question-block {
+  margin-bottom: 25px;
+  padding: 20px;
+  border-left: 5px solid #007bff;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.question-block p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.option-label {
+  display: block;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+  text-align: center;
+}
+
+/* ==== ESTILOS PARA RESULTADOS ==== */
+.resultados-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: auto;
+}
+
+.resultados-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.mensaje-carga,
+.mensaje-error {
+  text-align: center;
+  font-size: 18px;
+  color: #999;
+  margin-top: 20px;
+}
+
+.grafico-container {
+  margin-bottom: 30px;
+}
+
+.analisis-container {
+  background-color: #f1f5f9;
+  border-left: 5px solid #0b5ed7;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.analisis-container h3 {
+  margin-bottom: 10px;
+  color: #0b5ed7;
+}
+
+.analisis-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.analisis-container li {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+/* ==== ESTILO FORMULARIO DE REGISTRO ==== */
+.form-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-title {
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #0b5ed7;
+}
+
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}

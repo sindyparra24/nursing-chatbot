@@ -1,0 +1,19 @@
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+.env
+*.log
+
+# Node
+node_modules/
+build/
+dist/
+
+# React
+frontend/node_modules
+frontend/build
+
+# Otros
+*.env
+.DS_Store
