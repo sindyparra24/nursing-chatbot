@@ -1,4 +1,4 @@
-# Sistema Educativo con Chatbot para Estudiantes de Enfermería 🩺
+# Sistema Educativo con Chatbot para Estudiantes de Enfermería 
 
 Basado en el artículo científico:
 **"Development and effects of a chatbot education program for self-directed learning in nursing students"**
