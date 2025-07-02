@@ -21,7 +21,6 @@ const RegistroEstudiante = () => {
         correo,
       });
 
-      // Si el estudiante fue registrado correctamente
       if (res.status === 200 && res.data.message) {
         localStorage.setItem("studentName", name);
         localStorage.setItem("studentEmail", correo);
@@ -31,7 +30,6 @@ const RegistroEstudiante = () => {
     } catch (error) {
       const errorMsg = error.response?.data?.error;
 
-      // Si el estudiante ya está registrado, aún así redirige
       if (errorMsg === "El estudiante ya está registrado") {
         localStorage.setItem("studentName", name);
         localStorage.setItem("studentEmail", correo);
@@ -44,38 +42,39 @@ const RegistroEstudiante = () => {
   };
 
   return (
-    <div className="form-container">
-      <h2 className="form-title">Registro de Estudiante</h2>
+    <div className="registro-contenedor">
+      <h1 className="titulo-principal">Bienvenido al Sistema Educativo</h1>
+      <div className="formulario-registro">
+        <h2 className="titulo-formulario">Registro de Estudiante</h2>
 
-      <div className="form-group">
-        <label htmlFor="nombre">Nombre:</label>
-        <input
-          id="nombre"
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          className="form-input"
-          placeholder="Ingresa tu nombre completo"
-        />
+        <div className="campo-formulario">
+          <label htmlFor="nombre">Nombre:</label>
+          <input
+            id="nombre"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Ingresa tu nombre completo"
+          />
+        </div>
+
+        <div className="campo-formulario">
+          <label htmlFor="correo">Correo:</label>
+          <input
+            id="correo"
+            type="email"
+            value={correo}
+            onChange={(e) => setCorreo(e.target.value)}
+            placeholder="ejemplo@correo.com"
+          />
+        </div>
+
+        <button onClick={handleRegistro} className="boton-enviar">
+          Registrar
+        </button>
+
+        {mensaje && <p className="mensaje">{mensaje}</p>}
       </div>
-
-      <div className="form-group">
-        <label htmlFor="correo">Correo:</label>
-        <input
-          id="correo"
-          type="email"
-          value={correo}
-          onChange={(e) => setCorreo(e.target.value)}
-          className="form-input"
-          placeholder="ejemplo@correo.com"
-        />
-      </div>
-
-      <button onClick={handleRegistro} className="submit-button">
-        Registrar
-      </button>
-
-      {mensaje && <p className="message">{mensaje}</p>}
     </div>
   );
 };

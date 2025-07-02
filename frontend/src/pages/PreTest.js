@@ -91,6 +91,9 @@ const PreTest = () => {
         respuestas: respuestasFormateadas,
       });
 
+      // Guardar bandera de test completado
+      localStorage.setItem("preTestCompletado", "true");
+
       setMessage("Pre-test enviado correctamente");
       setTimeout(() => {
         navigate("/prediccion");

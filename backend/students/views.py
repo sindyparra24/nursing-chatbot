@@ -217,3 +217,56 @@ def predecir_resultado_posttest(request):
             return JsonResponse({"error": str(e)}, status=400)
 
     return JsonResponse({"error": "Método no permitido"}, status=405)
+
+@csrf_exempt
+def analizar_mejora_por_tema(request):
+    if request.method == "POST":
+        try:
+            data = json.loads(request.body.decode("utf-8"))
+            correo = data.get("correo")
+
+            if not correo:
+                return JsonResponse({"error": "Correo es requerido"}, status=400)
+
+            respuestas_correctas = {
+                "1": {"respuesta": "b", "tema": "asepsia"},
+                "2": {"respuesta": "a", "tema": "signos vitales"},
+                "3": {"respuesta": "c", "tema": "inyeccion"},
+                "4": {"respuesta": "d", "tema": "bioseguridad"},
+                "5": {"respuesta": "c", "tema": "lavado de manos"}
+            }
+
+            pre = test_collection.find_one({ "correo": correo, "testType": "pre" })
+            post = test_collection.find_one({ "correo": correo, "testType": "post" })
+
+            if not pre or not post:
+                return JsonResponse({"error": "Faltan resultados para analizar"}, status=404)
+
+            analisis = []
+
+            for key, val in respuestas_correctas.items():
+                tema = val["tema"]
+                correcta = val["respuesta"]
+
+                r_pre = next((r for r in pre.get("respuestas", []) if str(r.get("pregunta")) == key), {})
+                r_post = next((r for r in post.get("respuestas", []) if str(r.get("pregunta")) == key), {})
+
+                respuesta_pre = str(r_pre.get("respuesta", "")).strip().lower()
+                respuesta_post = str(r_post.get("respuesta", "")).strip().lower()
+
+                pre_ok = int(respuesta_pre == correcta)
+                post_ok = int(respuesta_post == correcta)
+
+                if post_ok == 1 and pre_ok == 0:
+                    analisis.append(f"Mejoraste en {tema}. ¡Buen trabajo!")
+                elif post_ok == 1 and pre_ok == 1:
+                    analisis.append(f"Mantuviste un buen rendimiento en {tema}.")
+                else:
+                    analisis.append(f"Aún necesitas repasar el tema {tema}.")
+
+            return JsonResponse({"analisis": analisis}, status=200)
+
+        except Exception as e:
+            return JsonResponse({"error": str(e)}, status=400)
+
+    return JsonResponse({"error": "Método no permitido"}, status=405)

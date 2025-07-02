@@ -1,3 +1,4 @@
+// src/pages/PostTest.js
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -91,6 +92,7 @@ const PostTest = () => {
         respuestas: respuestasFormateadas
       });
 
+      localStorage.setItem("postTestCompletado", "true"); // ✅ flag para rutas protegidas
       setMessage("Post-test enviado correctamente");
       setTimeout(() => {
         navigate("/resultados");
